@@ -152,7 +152,14 @@ export class MilestonesService {
         `Milestone ${milestoneId} has not been funded yet`,
       );
     }
-    assertTransition(milestone.status, MilestoneStatus.IN_PROGRESS);
+    // Only assert the transition when the milestone isn't already in-flight —
+    // the first resolution moves FUNDED -> IN_PROGRESS, so re-asserting on
+    // every resolveIssue made IN_PROGRESS->IN_PROGRESS fail and a milestone
+    // could only ever pay out its first issue (#578). An already-IN_PROGRESS
+    // milestone paying another issue needs no transition.
+    if (milestone.status !== MilestoneStatus.IN_PROGRESS) {
+      assertTransition(milestone.status, MilestoneStatus.IN_PROGRESS);
+    }
 
     // Verify the issue belongs to this milestone (#114).
     const issue = milestone.issues.find((i) => i.id === issueId);
