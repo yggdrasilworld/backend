@@ -75,7 +75,7 @@ describe('MilestonesService', () => {
         sponsorId: 'sponsor-1',
       });
 
-      const milestone = await service.fund('m1', 'GFUNDER');
+      const milestone = await service.fund('m1', 'GFUNDER', 'sponsor-1');
 
       expect(milestone.status).toBe(MilestoneStatus.FUNDED);
       expect(milestone.escrowId).toBe('escrow-1');
@@ -90,7 +90,7 @@ describe('MilestonesService', () => {
         sponsorId: 'sponsor-1',
       });
 
-      await service.fund('m1', 'GFUNDER');
+      await service.fund('m1', 'GFUNDER', 'sponsor-1');
 
       expect(escrowService.fund).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -110,7 +110,7 @@ describe('MilestonesService', () => {
         sponsorId: null,
       });
 
-      await service.fund('m2', 'GFUNDER');
+      await service.fund('m2', 'GFUNDER', 'sponsor-1');
 
       expect(escrowService.fund).toHaveBeenCalledWith(
         expect.objectContaining({ sponsorId: null }),
@@ -123,7 +123,7 @@ describe('MilestonesService', () => {
         status: MilestoneStatus.FUNDED,
       });
 
-      await expect(service.fund('m1', 'GFUNDER')).rejects.toThrow(
+      await expect(service.fund('m1', 'GFUNDER', 'sponsor-1')).rejects.toThrow(
         'Milestone m1 is not OPEN (current: funded)',
       );
     });
@@ -263,6 +263,7 @@ describe('MilestonesService', () => {
         '250.0000000',
         'RECIPIENT_ADDR',
         'user-1',
+        expect.anything(),
       );
       expect(payment.id).toBe('payment-1');
       expect(dataSource.transaction).toHaveBeenCalled();
@@ -316,6 +317,39 @@ describe('MilestonesService', () => {
         'm1',
         expect.objectContaining({ status: MilestoneStatus.IN_PROGRESS }),
       );
+    });
+
+    it('resolves two issues in a row (#578 — IN_PROGRESS pays again)', async () => {
+      const milestone = {
+        id: 'm1',
+        status: MilestoneStatus.FUNDED,
+        escrowId: 'escrow-1',
+        budget: '500',
+        distributed: '0',
+        issues: [
+          { id: 'i1', state: 'open' },
+          { id: 'i2', state: 'open' },
+        ],
+      };
+      milestoneRepo.findOne.mockResolvedValue(milestone);
+
+      // First resolution moves the milestone to IN_PROGRESS.
+      await service.resolveIssue('m1', 'i1', 'RECIPIENT_ADDR', 'user-1');
+      milestone.status = MilestoneStatus.IN_PROGRESS;
+      milestone.issues = [{ id: 'i2', state: 'open' }];
+
+      // The second must not trip the transition assert — before the fix the
+      // IN_PROGRESS->IN_PROGRESS call was rejected, so a milestone could only
+      // ever pay its first issue.
+      const payment = await service.resolveIssue(
+        'm1',
+        'i2',
+        'RECIPIENT_ADDR',
+        'user-1',
+      );
+
+      expect(payment.id).toBe('payment-1');
+      expect(escrowService.releasePartial).toHaveBeenCalledTimes(2);
     });
 
     it('rejects when milestone has no escrow', async () => {
@@ -406,6 +440,7 @@ describe('MilestonesService', () => {
         '333.3333333',
         'RECIPIENT_ADDR',
         undefined,
+        expect.anything(),
       );
     });
   });
