@@ -1,0 +1,14 @@
+src/github/github-webhook-payload.util.spec.ts
+  h_d2833f622cce50 23,28
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "8fca9e751e87c7f12ad7dc30c705cfe7b8ccdaf5",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
