@@ -1,0 +1,14 @@
+src/escrow/escrow.service.spec.ts
+  h_d2833f622cce50 126-129
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "ecdfccd76b048ed4e07010d67ea755fdd320b9d7",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
