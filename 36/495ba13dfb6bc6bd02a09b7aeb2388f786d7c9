@@ -1,0 +1,24 @@
+src/escrow/dto/fund-escrow.dto.ts
+  h_d2833f622cce50 2,4,92-95
+src/escrow/escrow.controller.spec.ts
+  h_d2833f622cce50 118-121,148,216,219-220,241-242,249,305,313
+src/escrow/escrow.service.spec.ts
+  h_d2833f622cce50 126-129
+src/escrow/escrow.service.ts
+  h_d2833f622cce50 606-607
+src/github/github-webhooks.service.spec.ts
+  h_d2833f622cce50 872-874
+test/mocks/stellar-sdk.mock.js
+  h_d2833f622cce50 43-90,92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "36495ba13dfb6bc6bd02a09b7aeb2388f786d7c9",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
