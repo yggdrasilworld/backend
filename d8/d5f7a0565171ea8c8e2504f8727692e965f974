@@ -1,0 +1,14 @@
+src/config/configuration.spec.ts
+  h_d2833f622cce50 1-58
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d8d5f7a0565171ea8c8e2504f8727692e965f974",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
