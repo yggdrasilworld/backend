@@ -1,0 +1,16 @@
+src/milestones/milestones.controller.spec.ts
+  h_d2833f622cce50 1,9,12,39-45,65-67,69-72,94-96,98-102
+src/milestones/milestones.service.spec.ts
+  h_d2833f622cce50 9,79,94,114,127,267,346,411
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9195bd4c7596d32506b08f507eacda134400311b",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
