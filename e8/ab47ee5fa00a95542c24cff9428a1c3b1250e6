@@ -1,0 +1,16 @@
+src/escrow/escrow.service.ts
+  h_d2833f622cce50 593-594
+src/github/github-webhooks.service.spec.ts
+  h_d2833f622cce50 872-874
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "e8ab47ee5fa00a95542c24cff9428a1c3b1250e6",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
