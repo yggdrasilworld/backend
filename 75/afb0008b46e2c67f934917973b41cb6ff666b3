@@ -1,0 +1,16 @@
+src/common/validators/stellar-address.validator.spec.ts
+  h_d2833f622cce50 13
+test/mocks/stellar-sdk.mock.js
+  h_d2833f622cce50 43-90,92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "75afb0008b46e2c67f934917973b41cb6ff666b3",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
