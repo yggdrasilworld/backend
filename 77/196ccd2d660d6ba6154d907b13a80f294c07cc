@@ -1,0 +1,14 @@
+src/bounties/bounty-expiry.scheduler.spec.ts
+  h_d2833f622cce50 2,9-14,18-29,35,69-87
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "77196ccd2d660d6ba6154d907b13a80f294c07cc",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
