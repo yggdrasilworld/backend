@@ -1,0 +1,26 @@
+src/bounties/bounties.controller.spec.ts
+  h_d2833f622cce50 1,4,14,53-59,80-82,84,98-106,111-114,138-140,142-145
+src/bounties/bounties.service.spec.ts
+  h_d2833f622cce50 1,7,22,44,58,68-78,91,115,129,131,146,151-154,156-158,163-186,358-372
+src/bounties/bounties.service.ts
+  h_d2833f622cce50 8,110,114,119,123,297-308,311-317
+src/maintenance-pool/maintenance-pool.service.spec.ts
+  h_d2833f622cce50 305,319,342,379,398,418,446-450,453
+src/milestones/milestones.controller.spec.ts
+  h_d2833f622cce50 1,9,12,39-45,65-67,69-72,94-96,98-102
+src/milestones/milestones.service.spec.ts
+  h_d2833f622cce50 9,79,94,114,127,267,346,411
+test/mocks/stellar-sdk.mock.js
+  h_d2833f622cce50 43-90,92
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "6854dfd095ac074ec5cfaf80e5d9558cac660c01",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
