@@ -1,0 +1,14 @@
+src/reputation/reputation.service.spec.ts
+  h_d2833f622cce50 26,98,100,105
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "96263e34802cebb1268b3b839eceb1b0367dc76a",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
