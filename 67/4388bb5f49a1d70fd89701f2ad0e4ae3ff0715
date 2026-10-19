@@ -1,0 +1,14 @@
+src/maintenance-pool/maintenance-pool.service.spec.ts
+  h_d2833f622cce50 305,319,342,379,398,418,446-450,453
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "674388bb5f49a1d70fd89701f2ad0e4ae3ff0715",
+  "prompts": {},
+  "humans": {
+    "h_d2833f622cce50": {
+      "author": "Your Name <you@example.com>"
+    }
+  }
+}
